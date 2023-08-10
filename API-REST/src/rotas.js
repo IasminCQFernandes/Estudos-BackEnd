@@ -11,4 +11,6 @@ rotas.post('/instrutores', instrutores.cadastrarIntrutor)
 
 rotas.put('/instrutor/:id', instrutores.atualizarInstrutor)
 
+rotas.patch('/instrutor/:id/status', instrutores.atualizarStatus)
+
 module.exports = rotas;
