@@ -13,4 +13,6 @@ rotas.put('/instrutor/:id', instrutores.atualizarInstrutor)
 
 rotas.patch('/instrutor/:id/status', instrutores.atualizarStatus)
 
+rotas.delete('/instruror/:id')
+
 module.exports = rotas;

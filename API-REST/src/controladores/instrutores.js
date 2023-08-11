@@ -1,4 +1,4 @@
-const {intrutores, instrutores} = require('../dados')
+let {intrutores, instrutores} = require('../dados')
 let {identificadorInstrutor} = require('../dados')
 
 const listarIinstrutores = (req, res) =>{
@@ -72,7 +72,7 @@ const atualizarInstrutor = (req, res)=>{
     instrutor.email = email;
     instrutor.status = status;
 
-    return res.status(203).send();
+    return res.status(204).send();
 }
 
 const atualizarStatus = (req, res) =>{
@@ -90,7 +90,25 @@ const atualizarStatus = (req, res) =>{
 
     instrutor.status = status;
 
-    return res.status(203).send();
+    return res.status(204).send();
+}
+
+const excluirIntrutor = (req, res) =>{
+    const {id} = req.params;
+
+    const instrutor = instrutores.find((instrutor) => {
+        return instrutor.id === Number(id)
+    })
+
+    if (!instrutor) {
+        return res.send(404).json({mensagem: 'instrutor não encontrado!'})
+    }
+
+    instrutores = instrutores.filter(() =>{
+        return instrutor.id !== Number(id)
+    })
+
+    return res.status(204).send()
 }
 
 module.exports={
