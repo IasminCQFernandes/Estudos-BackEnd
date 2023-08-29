@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../../Downloads/modulo6"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "IBM",
+		"liveServer.settings.port": 5501
+	}
+}
